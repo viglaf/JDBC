@@ -8,8 +8,8 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        //Util.getSessionFactory();
-        Util.getConnection();
+        Util.getSessionFactory();
+
         UserService user = new UserServiceImpl();
 
         user.createUsersTable();
@@ -24,6 +24,6 @@ public class Main {
         user.cleanUsersTable();
         user.dropUsersTable();
 
-        Util.closeConnect(Util.getConnection());
+        Util.closeSessionFactory();
     }
 }
